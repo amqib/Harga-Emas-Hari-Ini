@@ -1,0 +1,1 @@
+LabelBase.register(name="Bomat", fn_regular = "assets/fonts/BodoAmat.ttf")

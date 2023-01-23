@@ -1,0 +1,90 @@
+#:kivy 2.1.0
+#:import utils kivy.utils
+
+<Home>:
+    MDFloatLayout:
+        md_bg_color: utils.get_color_from_hex("#3B44F6")
+
+        Image:
+            source: "assets/images/gold-ingots.png"
+            size_hint: .45, .45
+            pos_hint: {'center_x': .5, 'center_y': .8}
+        
+        MDBoxLayout:
+            size_hint: .5 ,.05
+            pos_hint: {'center_x': 0.5,'center_y': 0.62}
+            md_bg_color: "white"
+            radius: [10]
+            MDLabel:
+                text: "Emas 24K"
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                font_name: "assets/fonts/Poppins-SemiBold.ttf"
+                halign: "center"
+                color: "black"
+                font_size: "20sp"
+
+        MDLabel:
+            id : emas_mulia
+            text: "Rp. 000"
+            pos_hint: {'center_x': 0.5,'center_y': 0.52}
+            halign: "center"
+            color: "white"
+            font_name: "assets/fonts/Poppins-Bold.ttf"
+            font_size: "40sp"
+
+        MDBoxLayout:
+            size_hint: .5 ,.05
+            pos_hint: {'center_x': 0.5,'center_y': 0.42}
+            md_bg_color: "white"
+            radius: [10]
+            MDLabel:
+                text: "Harga Jual"
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                font_name: "assets/fonts/Poppins-SemiBold.ttf"
+                halign: "center"
+                color: "black"
+                font_size: "20sp"
+
+
+        MDLabel:
+            id : emas_perhiasan
+            text: "Rp. 000"
+            pos_hint: {'center_x': 0.5,'center_y': 0.32}
+            halign: "center"
+            color: "white"
+            font_name: "assets/fonts/Poppins-Bold.ttf"
+            font_size: "40sp"
+
+        MDBoxLayout:
+            size_hint: .9 ,.05
+            pos_hint: {'center_x': 0.5,'center_y': 0.2}
+            md_bg_color: utils.get_color_from_hex("#ffb13b")
+            radius: [10]
+            MDLabel:
+                id : status
+                text: "status"
+                pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                font_name: "assets/fonts/Poppins-Regular.ttf"
+                halign: "center"
+                color: "black"
+                font_size: "12sp"
+        
+        
+        Button:
+            text: "Cek Harga Emas"
+            font_size: "20sp"
+            size_hint: .9, .1
+            pos_hint: {'center_x': 0.5,'center_y': 0.1}
+            background_color: 1,1,1,0
+            color: "white"
+            font_name: "assets/fonts/Poppins-SemiBold.ttf"
+            on_release:
+                root.get_price()
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#3EC70B")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+        
